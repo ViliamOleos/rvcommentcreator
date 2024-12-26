@@ -1,0 +1,2 @@
+ todo:
+i gotta change the commit standard, the renaming operator should take literal strings (ex.: "README.md"~"readme.md")
