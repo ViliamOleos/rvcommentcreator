@@ -1,3 +1,19 @@
+# RV Additions (i copied this from rvkey lol)
+
+
+# Code::Blocks .layout file
+*.layout 
+
+# no way somebody is reading this
+*.depend
+
+
+
+
+
+# Default .gitignore
+
+
 # Prerequisites
 *.d
 
