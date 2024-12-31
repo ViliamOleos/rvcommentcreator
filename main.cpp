@@ -4,7 +4,7 @@
 
 using namespace std;
 
-string headergen(string text, char symbol, unsigned int symcount)
+string headergen(string text, string symbol, unsigned int symcount)
 {
     string hdstream;
 
@@ -19,8 +19,7 @@ string headergen(string text, char symbol, unsigned int symcount)
 int main()
 {
     //-----------------------VARS-----------------------
-    string txt; char sym; unsigned int length;
-    char erranswer;
+    string txt; string sym; unsigned int length;
 
 
 
@@ -30,18 +29,19 @@ int main()
     cout << "Header Text (Pls Use '(' for Space) [s.length()%2=0]:\n"; // Ask
     cin >> txt; // Receive Answer
     // ERROR HANDLING \/
-    if(txt.length()%2!=0){cout<<"ERROR: Text had odd amount of characters, trying again...\n\n";goto input;}
+    if(txt.length()%2!=0){cout<<"ERROR: Text had odd amount of characters, trying again...\n\n\n";goto input;}
     // ERROR HANDLING /\.
     std::replace(txt.begin(), txt.end(), '@', ' '); // Turn @ -> Space
 
     cout << "Bar Symbol (Use '(' for Space) [char]:\n"; // Ask
     cin >> sym; // Receive Answer
-    if(sym=='@'){sym=' ';} // @ -> Space
+    sym=sym[0]; // This variable was supposed to be a char but cin is hard to work with
+    if(sym=="@"){sym=" ";} // @ -> Space
 
     cout << "Bar Length (Including Text) [n%2=0]:\n"; // Ask
     cin >> length; // Receive Answer
     // ERROR HANDLING \/
-    if(txt.length()%2!=0){cout<<"ERROR: Number is odd, trying again...\n\n";goto input;}
+    if(txt.length()%2!=0){cout<<"ERROR: Number is odd, trying again...\n\n\n";goto input;}
     // ERROR HANDLING /\.
 
 
